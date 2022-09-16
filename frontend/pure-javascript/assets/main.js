@@ -18,8 +18,8 @@ const negotiatorConfig = {
 		devconConfig
 	],
 	uiOptions: {
-		openingHeading: "Open a new world of perks available with your Devcon",
-		issuerHeading: "Get discount with Ticket",
+		openingHeading: "Open a new world of perks available with your Devcon Ticket",
+		issuerHeading: "Your Tickets",
 		repeatAction: "try again",
 		theme: "light",
 		position: "bottom-right"
@@ -81,9 +81,43 @@ negotiator.on("tokens", (tokens) => {
 	renderTokens();
 });
 
-negotiator.on("token-proof", (data) => {
-	console.log(data);
-	// TODO: Post to verification service
+negotiator.on("token-proof", async (authRes) => {
+
+	console.log(authRes);
+
+	if (authRes.error){
+		alert("Attestation validation failed: " + authRes.error);
+		return;
+	}
+
+	try {
+
+		const data = {
+			useTicket: authRes.data.proof,
+			address: authRes.data?.useEthKey?.address ?? ""
+		};
+
+		console.log(data);
+
+		const res = await fetch("http://localhost:8089/validate-attestation", {
+			method: "POST",
+			headers: [
+				["Content-Type", "application/json"]
+			],
+			body: JSON.stringify(data)
+		})
+
+		if (res.status !== 200) {
+			let data = await res.json();
+			alert("Attestation server validation failed: " + data.message);
+			return;
+		}
+
+		alert("Attestation server validation successful");
+
+	} catch (e){
+		alert("Attestation server validation failed: " + e.message);
+	}
 });
 
 window.authenticateToken = (elem) => {

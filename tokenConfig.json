@@ -1,10 +1,11 @@
 {
-   "collectionID": "devcon-test",
+   "collectionID": "devcon",
    "onChain": false,
    "title": "Devcon Test Ticket",
    "image": "https://raw.githubusercontent.com/TokenScript/token-negotiator/main/mock-images/devcon.svg",
    "tokenOrigin": "https://tokenscript.github.io/token-negotiator-examples/token-outlet-website/",
    "attestationOrigin": "https://attestation.id/",
+   "unEndPoint": "https://crypto-verify.herokuapp.com/use-devcon-ticket",
    "base64senderPublicKeys": {
       "6": "MIIBMzCB7AYHKoZIzj0CATCB4AIBATAsBgcqhkjOPQEBAiEA/////////////////////////////////////v///C8wRAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHBEEEeb5mfvncu6xVoGKVzocLBwKb/NstzijZWfKBWxb4F5hIOtp3JqPEZV2k+/wOEQio/Re0SKaFVBmcR9CP+xDUuAIhAP////////////////////66rtzmr0igO7/SXozQNkFBAgEBA0IABGMxHraqggr2keTXszIcchTjYjH5WXpDaBOYgXva82mKcGnKgGRORXSmcjWN2suUCMkLQj3UNlZCFWF10wIrrlw="
    },
