@@ -23,3 +23,5 @@ This enables sponsors to reach new customers, build brand trust, gain insights o
 
 The integration guide will guide you through getting up and running and also give you a deeper understanding of 
 how permissionless perks functions and the options available to you as an integrator.
+
+[Go to the Integration Guide](INTEGRATION_GUIDE.md)
