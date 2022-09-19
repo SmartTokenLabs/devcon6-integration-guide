@@ -123,10 +123,33 @@ The attestation can be verified in two ways:
 
 1. Use our attestation verification API service by sending a HTTP post request with the attestation:
 
-2. Implement your own verification using our NPM or Java attestation packages
+2. Implement your own verification using our NPM or Java attestation libraries
 
-[Instructions to run examples with local server here]
+### Integrate via your own node.js service
 
+You can install our JS attestation library to an existing project via NPM:
+
+```shell
+$ npm i @tokenscript/attestation
+```
+
+Once you have installed the library, see server/src/index.ts for an example of verification
+
+#### Running the server example
+
+To run the server example, use the following commands:
+
+```shell
+$ cd server
+npm-typescript$ npm i
+npm-typescript$ npm run start
+```
+
+The server will run on port 8089, but this can be overridden using the PORT environment variable. 
+
+### Integrate via your own Java service
+
+[TODO: Instructions to install attestation.jar & code snippet for verifying attestation]
 
 ## Solidity Verification
 
