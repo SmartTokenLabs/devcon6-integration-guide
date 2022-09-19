@@ -53,9 +53,14 @@ app.post('/validate-attestation', (req: Request, res: Response) => {
 		);
 
 		// Do something with the ticket details
-		console.log(attestedObject);
+		//console.log(attestedObject);
 
 		console.log("Ethereum address: " + attestedObject.getAtt().getUnsignedAttestation().getAddress());
+
+		console.log("Ticket details: ");
+		console.log("Ticket ID: " + attestedObject.getAttestableObject().ticketId);
+		console.log("Class: " + attestedObject.getAttestableObject().ticketClass);
+		console.log("Decon ID: " + attestedObject.getAttestableObject().devconId);
 
 		res.json({
 			success: true,

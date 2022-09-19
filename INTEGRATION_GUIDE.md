@@ -52,10 +52,70 @@ process.
 To get you up and running fast, we have provided 2 examples of Token Negotiator integration in this repo:
 
 1. npm integration into a TypeScript project.
-2. Javascript UMD bundle integration in pure HTML & Javascript
+2. Javascript UMD bundle integration in pure HTML & Javascript.
 
-[TODO: Instructions to run examples here]
+### Running the examples
 
+To run the TypeScript example:
+```shell
+$ cd frontend/npm-typescript
+npm-typescript$ npm i
+npm-typescript$ npm run start
+```
+
+To run the UMD example, serve the files inside the frontend/pure-javascript folder from your 
+preferred webserver and open it in your browser. If you don't have a preferred webserver you 
+can run it using the http-server NPM package
+
+```shell
+$ npx http-server frontend/pure-javascript -p 8085
+```
+
+### Integrating using NPM
+
+If you are already using NPM, you can install the token-negotiator module directly with NPM:
+```shell
+$ npm i @tokenscript/token-negotiator
+```
+
+Token negotiator has some dependencies that require node.js polyfills for webpack.
+Install the polyfill plugin:
+```shell
+$ npm i node-polyfill-webpack-plugin
+```
+And add the plugin to your webpack config:
+
+```js
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+...
+module.exports = {
+  plugins: 
+    ...
+    new NodePolyfillPlugin()  
+  ]
+  ...
+}
+```
+
+Once you have installed TN, you can use the code at src/index.ts for invoking authentication. 
+Copy the code into your own application & modify it as required.
+
+Note: If you are using rollup or create-react-app, we have some examples of how to include polyfills 
+over at the [Token Negotiator Examples](https://github.com/TokenScript/token-negotiator-examples) repo.
+
+### Integrating using Javascript bundle
+
+To integrate using the Javascript bundle, simply copy  
+frontend/pure-javascript/assets/negotiator into your own project and include the JS & CSS in 
+the HTML page or template of your choosing.
+
+```html
+<script src="assets/negotiator/negotiator.js"></script>
+<link rel="stylesheet" href="assets/negotiator/theme/style.css">
+```
+
+TN will now be accessible via window.negotiator. Copy the code at assets/main.js and modify it 
+as necessary for your application.
 
 ## Server verification
 

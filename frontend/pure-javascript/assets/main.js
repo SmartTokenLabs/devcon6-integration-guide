@@ -55,7 +55,7 @@ function renderTokens(){
                       ${token.ticketClass}
                     </h5>
                     <p class="ticketId">
-                      ${token.ticketIdNumber ?? token.ticketIdString}
+                      ${token.ticketIdNumber ?? token.ticketId ?? token.ticketIdNumber}
                     </p class="ticketId">
                     <p class="devconId">
                       Devcon ID: ${token.devconId}
