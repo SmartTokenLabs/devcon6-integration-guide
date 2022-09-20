@@ -1,3 +1,6 @@
+/* Attestation decode and validation */
+/* AlphaWallet 2021 - 2022 */
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -21,9 +24,12 @@ contract AttestationNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Bur
 	address _attestorKey;
 	address _issuerKey;
 
-	constructor() ERC721("STLBayc", "STLBAYC") {
+	constructor(address attestorKey, address issuerKey) ERC721("Attestation BAYC", "ATTBAYC") {
 		_grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
 		_contractURI = "https://gateway.pinata.cloud/ipfs/QmY78Nw83Y3TTmKqzhmREgzMNuRuwMyawYMxKUdo7R7xXJ/bayc.json";
+		_attestorKey = attestorKey;
+		_issuerKey = issuerKey;
+		_tokenIdCounter._value = 1;
 	}
 
 	function contractURI() public view returns (string memory) {
