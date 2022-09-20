@@ -44,6 +44,8 @@ app.post('/validate-attestation', (req: Request, res: Response) => {
 		return;
 	}
 
+	// TODO: verify UN to get address
+
 	try {
 		const attestedObject = Authenticator.validateUseTicket(
 			body.useTicket,

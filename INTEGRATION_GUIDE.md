@@ -26,7 +26,7 @@ and some cryptographic magic is used by the user to prove:
 During the verification process, if an identifier attestation isn’t generated yet, the user will be redirected to 
 Attestation.id to confirm their email address & create one. Once the attestation is issued, it is used together with 
 the ticket to produce a ZK proof that the ticket & identifier attestations are issued towards the same identifier. 
-In simpler terms, it verifies that the user is the valid ticket holder. The result can be verified by a third party 
+In simpler terms, it verifies that the user is the valid ticket holder. The result can be verified by a third party (you) 
 through the use of a smart contract or server. Like the ticket, the identifier attestation is stored in local storage 
 and expires after a week. Users will only need to perform this step once a week unless they move to a new browser or 
 device. 
