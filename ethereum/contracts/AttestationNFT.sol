@@ -67,8 +67,10 @@ contract AttestationNFT is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Bur
 		require(subject != address(0) && tokenId != 0 && timeStampValid, "Attestation not valid");
 		require(tokenBytes.length < 33, "TokenID overflow");
 
-		tokenId = _tokenIdCounter.current();
-		_tokenIdCounter.increment();
+		// Token ID can be based on the ID of the ticket attestation or a tokenId that you generate.
+		//tokenId = _tokenIdCounter.current();
+		//_tokenIdCounter.increment();
+
 		_safeMint(msg.sender, tokenId);
 		_setTokenURI(tokenId, "https://gateway.pinata.cloud/ipfs/QmXdnWNa2CaRCUa4jMTirmkVJkygr2LtnccSuDY3yXrvVm/bayc_1013.json");
 	}

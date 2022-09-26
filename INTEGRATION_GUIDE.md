@@ -123,6 +123,8 @@ The attestation can be verified in two ways:
 
 1. Use our attestation verification API service by sending a HTTP post request with the attestation:
 
+[TODO: Example of using our crypto verify service]
+
 2. Implement your own verification using our NPM or Java attestation libraries
 
 ### Integrate via your own node.js service
@@ -153,8 +155,15 @@ The server will run on port 8089, but this can be overridden using the PORT envi
 
 ## Solidity Verification
 
-[TODO: Add solidity examples]
+The ethereum folder in this Repo has an example of validation in Solidity. The example allows minting an NFT using a ticket attestation.
+Token ID can be based on the ID of the ticket attestation (to limit minting to 1 per ticket) or a tokenId that you generate.
 
+```shell
+$ npm i
+$ npm run test
+```
+
+To use ticket validation in your own contract, copy the VerifyAttestation.sol library to your project.
 
 # Configure for production
 
