@@ -4,7 +4,7 @@
   "description": "gateway to negotiate tokens from the token outlet",
   "main": "index.js",
   "dependencies": {
-    "@tokenscript/token-negotiator": "^2.1.0"
+    "@tokenscript/token-negotiator": "^2.2.0-dc.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -17,14 +17,14 @@
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.4.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
+    "source-map-loader": "^4.0.0",
     "style-loader": "^3.3.0",
     "terser-webpack-plugin": "^5.2.4",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.3",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.3.1",
-    "source-map-loader": "^4.0.0"
+    "webpack-dev-server": "^4.3.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
