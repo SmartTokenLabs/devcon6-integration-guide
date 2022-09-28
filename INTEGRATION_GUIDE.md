@@ -123,7 +123,24 @@ The attestation can be verified in two ways:
 
 1. Use our attestation verification API service by sending a HTTP post request with the attestation:
 
-[TODO: Example of using our crypto verify service]
+```http request
+POST https://attestation-verify.tokenscript.org/verify-useticket-attestation
+Content-Type: application/json
+
+{
+    "useTicket": "MIIDVTCBkz...",
+    "un": {
+        "address": "0x0...",
+        "domain": "some-domain.com",
+        "expiry": 1664340935557,
+        "UN": "123...",
+        "randomness": "123...",
+        "signature": "0x0..."
+    }
+}
+```
+
+Note: UN parameter is optional
 
 2. Implement your own verification using our NPM or Java attestation libraries
 
@@ -151,7 +168,7 @@ The server will run on port 8089, but this can be overridden using the PORT envi
 
 ### Integrate via your own Java service
 
-[TODO: Instructions to install attestation.jar & code snippet for verifying attestation]
+Please contact us if you are interested in using our attestation.jar library for server-side verification.
 
 ## Solidity Verification
 
@@ -164,6 +181,19 @@ $ npm run test
 ```
 
 To use ticket validation in your own contract, copy the VerifyAttestation.sol library to your project.
+
+# UN (unpredictable number) verification
+
+The UN challenge/signature provides an extra layer of verification for third party sites that want it. 
+Attestations are valid for a week and can be used across different third-party site. 
+UN verification allows the third party site to confirm that the attestation hasn't been compromised or shared by the user. 
+This comes at the expense of UX, as the user is required to sign a challenge on the third-party site. 
+
+## To turn off UN signing
+
+Update the tokenConfig before instantiating the token-negotiator client:
+
+`tokenConfig.unEndPoint = null`
 
 # Configure for production
 
