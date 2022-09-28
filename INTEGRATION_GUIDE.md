@@ -199,3 +199,39 @@ Update the tokenConfig before instantiating the token-negotiator client:
 
 You may have noticed that the tokenConfig.json file is used to configure an off-chain token you can test these examples with. 
 Closer to the Devcon date, we will provide a production config that you can use to recognize Devcon6 tickets.
+
+# Simplified Verification
+
+Signed ticket verification is offered as a way to do lightweight verification that does not require an 
+email attestation to be generated. To use this method you need to be whitelisted by SmartTokenLabs. 
+Once you have been whitelisted, you will receive a signedToken value in the token data:
+
+```javascript
+negotiator.on("tokens-selected", (tokens) => {
+	console.log(tokens.selectedTokens['devcon'][0]);
+});
+```
+
+```javascript
+{
+	ticketId: "123",
+	signedToken: "MIGTME..."
+    ...
+}
+```
+
+The signedToken can easily be validated by using our API or implementing your own verification.
+
+To verify using our API, send a HTTP POST request like so:
+```http request
+POST https://attestation-verify.tokenscript.org/verify-ticket
+Content-Type: application/json
+
+{
+    "ticket": "MIIDVTCBkz...",
+}
+```
+
+To implement your own verification, follow the example in server/src/index.ts (/verify-ticket endpoint).
+
+To request this verification method, please contact SmartTokenLabs and provide a demo of your integration. 

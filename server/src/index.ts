@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import {Authenticator} from "@tokenscript/attestation/dist/Authenticator";
 import devconConfig from "../../tokenConfig.json";
+import {Ticket} from "@tokenscript/attestation/dist/Ticket";
+import {KeyPair} from "@tokenscript/attestation/dist/libs/KeyPair";
 
 globalThis.window = {};
 
@@ -26,7 +28,7 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.post('/validate-attestation', (req: Request, res: Response) => {
+app.post('/verify-attestation', (req: Request, res: Response) => {
 
 	const body = req.body;
 
@@ -43,8 +45,6 @@ app.post('/validate-attestation', (req: Request, res: Response) => {
 		});
 		return;
 	}
-
-	// TODO: verify UN to get address
 
 	try {
 		const attestedObject = Authenticator.validateUseTicket(
@@ -76,6 +76,43 @@ app.post('/validate-attestation', (req: Request, res: Response) => {
 			message: e.message,
 		});
 	}
+});
+
+app.post('/verify-ticket', (req: Request, res: Response) => {
+
+	const body = req.body;
+
+	if (
+		!body ||
+		!body.ticket
+	) {
+		res.status(400).json({
+			success: false,
+			message: "Missing parameters",
+		});
+		return;
+	}
+
+	try {
+
+		// Verify ticket
+		const ticket = Ticket.fromBase64(body.ticket, KeyPair.parseKeyArrayStrings(devconConfig.base64senderPublicKeys));
+
+		res.status(200).json({
+			ticketId: ticket.getTicketId(),
+			ticketClass: ticket.getTicketClass(),
+			devconId: ticket.getDevconId()
+		});
+
+	} catch (e){
+		console.log("validateTicket error", e.message);
+		//console.error(e);
+		res.status(400).json({
+			success: false,
+			message: e.message,
+		});
+	}
+
 });
 
 app.listen(port, () => {

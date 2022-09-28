@@ -101,7 +101,7 @@ negotiator.on("token-proof", async (authRes) => {
 
 		console.log(data);
 
-		const res = await fetch("http://localhost:8089/validate-attestation", {
+		const res = await fetch("http://localhost:8089/verify-attestation", {
 			method: "POST",
 			headers: [
 				["Content-Type", "application/json"]
