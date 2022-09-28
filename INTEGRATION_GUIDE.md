@@ -195,11 +195,6 @@ Update the tokenConfig before instantiating the token-negotiator client:
 
 `tokenConfig.unEndPoint = null`
 
-# Configure for production
-
-You may have noticed that the tokenConfig.json file is used to configure an off-chain token you can test these examples with. 
-Closer to the Devcon date, we will provide a production config that you can use to recognize Devcon6 tickets.
-
 # Simplified Verification
 
 Signed ticket verification is offered as a way to do lightweight verification that does not require an 
@@ -234,4 +229,25 @@ Content-Type: application/json
 
 To implement your own verification, follow the example in server/src/index.ts (/verify-ticket endpoint).
 
-To request this verification method, please contact SmartTokenLabs and provide a demo of your integration. 
+To request this verification method, please contact SmartTokenLabs and provide a demo of your integration by emailing [sayhi@smarttokenlabs.com](mailto:sayhi@smarttokenlabs.com). 
+
+# Configure for production
+
+You may have noticed that the tokenConfig.json file is used to configure an off-chain token that you can test these examples with.
+You will need to use a different config in you production environment to detect actual devcon 6 tickets.
+
+The most up-to-date config is available at the following URL:
+
+`https://tokens.antopolbus.rv.ua/devcon6.js?v=0.16`
+
+We recommend that you load this config in a script tag, so you can stay up to date with any last minute changes:
+
+```html
+<script type="text/javascript" src="https://tokens.antopolbus.rv.ua/devcon6.js?v=0.16"></script>
+```
+
+```javascript
+const devconConfig = window.devconTokenConfig
+```
+
+You can find the full code commented out in the frontend examples.

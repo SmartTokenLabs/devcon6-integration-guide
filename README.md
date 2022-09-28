@@ -25,3 +25,20 @@ The integration guide will guide you through getting up and running and also giv
 how permissionless perks functions and the options available to you as an integrator.
 
 [Go to the Integration Guide](INTEGRATION_GUIDE.md)
+
+## Getting Listed
+
+Smart Token Labs is hosting the permissionless perks landing page, which will list available perks and allow users 
+to mint souvenir NFTs for Devcon VI using their ticket attestation. In order to get your own offer listed on the site 
+please contact us at [sayhi@smarttokenlabs.com](mailto:sayhi@smarttokenlabs.com) with the following information:
+
+- Company Name
+- Company Logo (link or attachment, at least 45px wide & high)
+- Excerpt - A short sentence (5-6 words) summarising your perk
+- Image - An image to be displayed in the listing (approx. 1536x864 pixels please)
+- Description - A few sentences describing your perk
+- Terms - Any terms or conditions for your perk
+- Link - The production link for your perk (must be live, so we can test compatibility)
+- Location - The location of the perk (for physical events only)
+
+[https://devcon-vi.attest.tickets/](https://devcon-vi.attest.tickets/)
