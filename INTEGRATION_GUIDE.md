@@ -182,14 +182,14 @@ $ npm run test
 
 To use ticket validation in your own contract, copy the VerifyAttestation.sol library to your project.
 
-# UN (unpredictable number) verification
+## UN (unpredictable number) verification
 
 The UN challenge/signature provides an extra layer of verification for third party sites that want it. 
 Attestations are valid for a week and can be used across different third-party site. 
 UN verification allows the third party site to confirm that the attestation hasn't been compromised or shared by the user. 
 This comes at the expense of UX, as the user is required to sign a challenge on the third-party site. 
 
-## To turn off UN signing
+### To turn off UN signing
 
 Update the tokenConfig before instantiating the token-negotiator client:
 
