@@ -4,13 +4,17 @@ import "@tokenscript/token-negotiator/dist/theme/style.css";
 
 import config from './../../../tokenConfig.json';
 
+declare global {
+	interface Window {
+		authenticateToken?: (elem: HTMLButtonElement) => void
+		devconTokenConfig: OffChainTokenConfig
+	}
+}
+
 const devconConfig = config as OffChainTokenConfig;
 
-declare global {
-    interface Window {
-		authenticateToken?: (elem: HTMLButtonElement) => void
-    }
-}
+// FOR PRODUCTION USE ONLY (make sure you uncomment the script tag in index.html)
+//const devconConfig = window.devconTokenConfig;
 
 const negotiatorConfig: NegotiationInterface = {
 	type: 'active',

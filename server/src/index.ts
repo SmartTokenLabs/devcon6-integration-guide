@@ -34,16 +34,17 @@ app.post('/verify-attestation', (req: Request, res: Response) => {
 
 	if (
 		!body ||
-		!body.useTicket ||
-		//!body.attestor ||
-		//!body.issuers ||
-		!body.address
+		!body.useTicket
 	) {
 		res.status(400).json({
 			success: false,
 			message: "Missing parameters",
 		});
 		return;
+	}
+
+	if (body.un){
+
 	}
 
 	try {
