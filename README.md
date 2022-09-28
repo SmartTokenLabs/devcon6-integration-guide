@@ -30,7 +30,7 @@ how permissionless perks functions and the options available to you as an integr
 
 Smart Token Labs is hosting the permissionless perks landing page, which will list available perks and allow users 
 to mint souvenir NFTs for Devcon VI using their ticket attestation. In order to get your own offer listed on the site 
-please contact us with the following information:
+please contact us at [sayhi@smarttokenlabs.com](mailto:sayhi@smarttokenlabs.com) with the following information:
 
 - Company Name
 - Company Logo (link or attachment, at least 45px wide & high)

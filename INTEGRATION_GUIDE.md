@@ -229,7 +229,7 @@ Content-Type: application/json
 
 To implement your own verification, follow the example in server/src/index.ts (/verify-ticket endpoint).
 
-To request this verification method, please contact SmartTokenLabs and provide a demo of your integration. 
+To request this verification method, please contact SmartTokenLabs and provide a demo of your integration by emailing [sayhi@smarttokenlabs.com](mailto:sayhi@smarttokenlabs.com). 
 
 # Configure for production
 
