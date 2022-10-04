@@ -238,12 +238,12 @@ You will need to use a different config in you production environment to detect 
 
 The most up-to-date config is available at the following URL:
 
-`https://tokens.antopolbus.rv.ua/devcon6.js?v=0.16`
+`https://devcon-vi.attest.tickets/devcon6.js?v=0.25`
 
 We recommend that you load this config in a script tag, so you can stay up to date with any last minute changes:
 
 ```html
-<script type="text/javascript" src="https://tokens.antopolbus.rv.ua/devcon6.js?v=0.16"></script>
+<script type="text/javascript" src="https://devcon-vi.attest.tickets/devcon6.js?v=0.25"></script>
 ```
 
 ```javascript
